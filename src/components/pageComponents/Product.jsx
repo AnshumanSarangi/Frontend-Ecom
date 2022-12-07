@@ -30,7 +30,7 @@ function Product(props) {
         <span className="m-2 font-normal">(256 Reviews)</span>
       </div>
       <span className="text-[#1a2834] font-medium">Rs. 999 /-</span>
-      <button className="inline-block px-6 py-2.5 bg-[#0a2f4f] text-[#92adbd] font-medium text-xs leading-tight uppercase rounded hover:bg-[#1a2834] active:bg-[#0a2f4f] transform hover:scale-105 active:scale-95 transition duration-300 ease-in-out">
+      <button className="inline-block px-6 py-2.5 mx-10 my-2 bg-[#0a2f4f] text-[#92adbd] font-medium text-xs leading-tight uppercase rounded hover:bg-[#1a2834] active:bg-[#0a2f4f] transform hover:scale-105 active:scale-95 transition duration-300 ease-in-out">
         Add To Cart
       </button>
     </div>
