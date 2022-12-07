@@ -1,6 +1,29 @@
 import React from "react";
+import axios from "axios";
 
 function AdminAddProduct() {
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    const enteredProductName = event.target.productName.value;
+    const enteredProductDescription = event.target.description.value;
+    const enteredProductPrice = event.target.price.value;
+    const enteredProductCategory = event.target.category.value;
+    const enteredProductImage = event.target.images.value;
+
+    let response = await axios.post(
+      `http://localhost:5000/api/v1/admin/product/new`,
+      {
+        name: enteredProductName,
+        description: enteredProductDescription,
+        price: enteredProductPrice,
+        category: enteredProductCategory,
+        images: enteredProductImage,
+      }
+    );
+    console.log("Product Added", response);
+  }
+
   return (
     <div className="flex justify-center">
       <div className="block rounded-lg bg-[#92adbd] max-w-sm text-center shadow-md shadow-[#1a2834]">
@@ -19,10 +42,8 @@ function AdminAddProduct() {
               className="w-full h-12 outline-none bg-[#92adbd] text-[#1a2834] font-medium placeholder:text-[#465059] border border-[#1a2834] rounded-md text-sm shadow-md px-5"
               type="text"
               placeholder="Enter Product Name"
-              id="name"
-              name="name"
-              value={user.username}
-              onChange={handleInputs}
+              id="productName"
+              name="productName"
             />
 
             <label htmlFor="description">Describe Product</label>
@@ -31,8 +52,6 @@ function AdminAddProduct() {
               type="text"
               id="description"
               name="description"
-              value={user.emailAddress}
-              onChange={handleInputs}
             />
 
             <label htmlFor="price">Price Per Piece</label>
@@ -42,8 +61,6 @@ function AdminAddProduct() {
               placeholder="Price In Number"
               id="price"
               name="price"
-              value={user.password}
-              onChange={handleInputs}
             />
 
             <label htmlFor="category">Category</label>
@@ -53,8 +70,6 @@ function AdminAddProduct() {
               placeholder="Define Categories"
               id="category"
               name="category"
-              value={user.password}
-              onChange={handleInputs}
             />
 
             <label htmlFor="images">Add Images</label>
@@ -63,8 +78,6 @@ function AdminAddProduct() {
               type="text"
               id="images"
               name="images"
-              value={user.password}
-              onChange={handleInputs}
             />
 
             <button className="inline-block px-6 py-2.5 bg-[#1a2834] text-[#92adbd] font-medium text-xs leading-tight uppercase rounded hover:bg-[#0a2f4f] active:bg-[#1a2834] transform hover:scale-105 active:scale-95 transition duration-300 ease-in-out">

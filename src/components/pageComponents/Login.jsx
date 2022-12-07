@@ -26,7 +26,7 @@ function Login() {
       email: enteredEmail,
       password: enteredPassword,
     });
-    console.log("User Logged In");
+    console.log("User Logged In", res);
   }
 
   return (

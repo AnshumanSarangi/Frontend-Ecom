@@ -6,6 +6,7 @@ import RegisterServices from "./services/pageServices/RegisterServices";
 import ProductServices from "./services/pageServices/ProductServices";
 import Login from "./components/pageComponents/Login";
 import Product from "./components/pageComponents/Product";
+import AdminAddProduct from "./components/adminComponents/AdminAddProduct";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       {/* <RegisterServices /> */}
       {/* <ProductServices /> */}
       <Login />
+      <AdminAddProduct />
       <Product />
       <Footer />
     </BrowserRouter>
