@@ -1,20 +1,22 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import Header from "./components/layoutComponents/Header";
 import Footer from "./components/layoutComponents/Footer";
 import RegisterServices from "./services/pageServices/RegisterServices";
 import ProductServices from "./services/pageServices/ProductServices";
-import TestContext from "./context/testContext/TestContext";
-import Dummy from "./components/Dummy";
+import Login from "./components/pageComponents/Login";
+import Product from "./components/pageComponents/Product";
 
 function App() {
   return (
-    <TestContext.Consumer>
+    <BrowserRouter>
       <Header />
       {/* <RegisterServices /> */}
       {/* <ProductServices /> */}
-      <Dummy />
+      <Login />
+      <Product />
       <Footer />
-    </TestContext.Consumer>
+    </BrowserRouter>
   );
 }
 
