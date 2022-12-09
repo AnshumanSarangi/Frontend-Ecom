@@ -26,7 +26,12 @@ function Login() {
       email: enteredEmail,
       password: enteredPassword,
     });
-    console.log("User Logged In", res);
+    console.log("Successfully Logged In", res);
+
+    const accessToken = res.data.token;
+    console.log("Access-Token : ", accessToken);
+
+    navigate("/");
   }
 
   return (
@@ -52,7 +57,7 @@ function Login() {
             <input
               className="w-full h-12 outline-none bg-[#92adbd] text-[#1a2834] font-medium placeholder:text-[#465059] border border-[#1a2834] rounded-md text-sm shadow-md px-5"
               required
-              id="password"
+              id="login--password"
               name="password"
               type="password"
               placeholder="Password"
@@ -65,7 +70,7 @@ function Login() {
           <div className="w-full flex items-center justify-center px-3 py-10">
             <button
               className="inline-block px-6 py-2.5 bg-[#0a2f4f] text-[#92adbd] font-medium text-xs leading-tight uppercase rounded hover:bg-[#1a2834] active:bg-[#0a2f4f] transform hover:scale-105 active:scale-95 transition duration-300 ease-in-out"
-              //   onClick={() => navigate("/user/new")}
+              onClick={() => navigate("/user/new")}
             >
               Create An Account
             </button>

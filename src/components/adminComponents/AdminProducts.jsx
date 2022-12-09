@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ProductServices from "../../services/ProductServices";
+import ProductServices from "../../services/pageServices/ProductServices";
 import AdminAddProduct from "./AdminAddProduct";
 
 function AdminProducts() {

@@ -1,6 +1,7 @@
 import React from "react";
 
-function AdminUsers() {
+function AdminUsers(props) {
+  const { users } = props;
   return (
     <div>
       <img src={users.profilePicture} alt={users.name} />

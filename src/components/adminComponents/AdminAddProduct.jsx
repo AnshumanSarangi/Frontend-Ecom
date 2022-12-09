@@ -5,6 +5,13 @@ function AdminAddProduct() {
   async function handleSubmit(event) {
     event.preventDefault();
 
+    // const headers = {
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     "Authorization": `bearer ${accessToken}`,
+    //   },
+    // };
+
     const enteredProductName = event.target.productName.value;
     const enteredProductDescription = event.target.description.value;
     const enteredProductPrice = event.target.price.value;
@@ -20,6 +27,7 @@ function AdminAddProduct() {
         category: enteredProductCategory,
         images: enteredProductImage,
       }
+      // headers
     );
     console.log("Product Added", response);
   }
@@ -34,7 +42,7 @@ function AdminAddProduct() {
           <form
             method="POST"
             className="flex flex-col mx-auto space-y-5 justify-center px-3 py-5"
-            id="register-form"
+            id="admin-product-register-form"
             onSubmit={handleSubmit}
           >
             <label htmlFor="name">Product Name</label>

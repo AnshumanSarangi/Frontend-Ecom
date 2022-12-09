@@ -1,7 +1,25 @@
 import React from "react";
+import axios from "axios";
 
-function Register(props) {
-  const { handleInputs, handleSubmit, user } = props;
+function Register() {
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    // deconstructed user data
+
+    const enteredUsername = event.target.username.value;
+    const enteredEmailAddress = event.target.emailAddress.value;
+    const enteredPassword = event.target.password.value;
+
+    let response = await axios.post(`http://localhost:5000/api/v1/register`, {
+      name: enteredUsername,
+      email: enteredEmailAddress,
+      password: enteredPassword,
+    });
+
+    console.log("User Registered Successfully", response);
+  }
+
   return (
     <div className="flex justify-center">
       <div className="block rounded-lg bg-[#92adbd] max-w-sm text-center shadow-md shadow-[#1a2834]">
@@ -22,8 +40,6 @@ function Register(props) {
               placeholder="Enter Username"
               id="username"
               name="username"
-              value={user.username}
-              onChange={handleInputs}
             />
 
             <label htmlFor="emailAddress" />
@@ -33,8 +49,6 @@ function Register(props) {
               placeholder="Enter Email-Address"
               id="emailAddress"
               name="emailAddress"
-              value={user.emailAddress}
-              onChange={handleInputs}
             />
 
             <label htmlFor="password" />
@@ -44,8 +58,6 @@ function Register(props) {
               placeholder="Enter Password"
               id="password"
               name="password"
-              value={user.password}
-              onChange={handleInputs}
             />
 
             <button className="inline-block px-6 py-2.5 bg-[#1a2834] text-[#92adbd] font-medium text-xs leading-tight uppercase rounded hover:bg-[#0a2f4f] active:bg-[#1a2834] transform hover:scale-105 active:scale-95 transition duration-300 ease-in-out">

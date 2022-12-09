@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 //IMPORT ICONS COMPONENT
 import { FaShoppingBasket, FaUserCircle, FaSearch } from "react-icons/fa";
@@ -6,12 +7,10 @@ import { FaShoppingBasket, FaUserCircle, FaSearch } from "react-icons/fa";
 function Header() {
   return (
     <header className=" flex w-full h-20 justify-between items-center bg-[#1a2834] py-0 px-[2%]">
-      <div
-        className="text-[#92adbd] hover:text-white active:text-white text-3xl font-semibold font-serif transform transition duration-300 hover:scale-110 cursor-pointer"
-        onClick="#"
-      >
-        E-Commerce-Web-App
+      <div className="text-[#92adbd] hover:text-white active:text-white text-3xl font-semibold font-serif transform transition duration-300 hover:scale-110 active:scale-95 cursor-pointer">
+        <Link to="/">E-Commerce-Web-App</Link>
       </div>
+
       <div className="flex border border-purple-200 rounded transform transition duration-300 hover:scale-105">
         <input
           type="text"
@@ -22,21 +21,23 @@ function Header() {
           <FaSearch />
         </button>
       </div>
+
       <nav className="cursor-pointer">
         <ul className="flex items-baseline p-0 m-0 list-none">
-          {/* <li>
+          <li>
             <div className="ml-12 text-sm text-[#1a2834] transform transition duration-300 hover:scale-125 px-4 bg-white border-l rounded">
-              <Link to="/login">Login</Link>Login
+              <Link to="/login">Login</Link>
             </div>
-          </li> */}
+          </li>
+
           <li className="ml-12 text-sm text-[#92adbd] hover:text-white active:text-white transform transition duration-300 hover:scale-125 active:underline underline-offset-1">
-            {/* <Link to="/products">Home</Link> */}Home
+            <Link to="/">Products</Link>
           </li>
           <li className="ml-12 text-sm text-[#92adbd] hover:text-white active:text-white transform transition duration-300 hover:scale-125 active:underline underline-offset-1">
-            {/* <Link to="/add-product">Add Product</Link> */}Products
+            <Link to="/admin/product/new">Add Product</Link>
           </li>
           <li className="ml-12 text-sm text-[#92adbd] hover:text-white active:text-white transform transition duration-300 hover:scale-125 active:underline underline-offset-1">
-            Contact
+            <Link to="/admin/dashboard">Admin-Dashboard</Link>
           </li>
           <li className="ml-12 text-sm text-[#92adbd] hover:text-white active:text-white transform transition duration-300 hover:scale-125 active:underline underline-offset-1">
             About
